@@ -1,0 +1,66 @@
+question_option_number=0
+answer_option_number=0
+
+answers=("C","B","A","A","B")
+answer=("").strip().upper()
+score=0
+
+rolls=("106","108","105","107")
+roll=""
+name=""
+
+questions=("1.What is the chemical formula of water? "
+           , "2.Which gas is necessary for combustion?"
+           ,"3.What is the pH value of a neutral substance?"
+           ,"4. The SI unit of power is:"
+           ,"5. A force of 20 N moves an object 2 m. What is the work done?")
+
+options=(("A.CO2","B.CHO","C.H20","D.HCl"),
+          ("A.N2","B.O2","C.H2","D.Cl"),
+          ("A.7","B.8","C.0","D.9"),
+          ("A.Watt","B. Joule","C.Newton","D.Meter"),
+          ("A) 10 J","B) 40 J","C) 18 J","D) 22 J"))
+
+
+while True:
+    name = input("Name:")
+    roll = input("Type your roll number:")
+    if roll in rolls:
+        break
+    else:
+        print("Invalid roll number. Try again.")
+
+for question in questions:
+    print("--------------------------------------------")
+    print(question)
+
+    for option in options[question_option_number]:
+        
+        print(option)
+
+    for ans in answers[answer_option_number]:
+        answer=input("Type your answer:").upper()
+
+        if answer in answers:
+            print("Your answer is correct.")
+            score +=1
+            print(f"Your score is:{score}")
+
+        else:
+            print("Your answer is incorrect.")
+            print(f"Correct answer is:{answers[answer_option_number]}")
+
+
+        answer_option_number +=1
+    question_option_number+=1
+
+
+print("""
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX      
+""")
+
+print(f"Name:{name}")
+print(f"Roll number:{roll}")
+print(f"Your total score is: {score}")
+
